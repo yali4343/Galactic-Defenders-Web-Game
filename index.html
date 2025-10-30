@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Defenders</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/images/spaceship-logo.png" type="images">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="assets/images/spaceship-logo.png" alt="Galactic Defenders Logo">
+                <h1>Galactic Defenders</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="nav-welcome">Home</a></li>
+                    <li><a href="#" id="nav-about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> 
+    
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen active">
+                <div class="logo-large">
+                    <img src="assets/images/spaceship-logo.png" alt="Galactic Defenders Logo">
+                    <h2>Galactic Defenders</h2>
+                </div>
+                <p>The Galaxy Is Under Attack - Only You Can Stop It !</p>
+                
+                
+                <div class="button-container">
+                    <button id="btn-register" class="btn btn-primary">Register</button>
+                    <button id="btn-login" class="btn btn-secondary">Login</button>
+                </div>
+            </div>
+            
+            <!-- Register Screen -->
+            <div id="register-screen" class="screen">
+                <div class="form-container">
+                    <h2>Register</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" class="form-control" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <div class="date-picker">
+                                <select id="birth-day" class="form-control" required>
+                                    <option value="" disabled selected>Day</option>
+                                </select>
+                                <select id="birth-month" class="form-control" required>
+                                    <option value="" disabled selected>Month</option>
+                                </select>
+                                <select id="birth-year" class="form-control" required>
+                                    <option value="" disabled selected>Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="button" id="btn-to-login" class="btn btn-secondary">Already have an account?</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Login Screen -->
+            <div id="login-screen" class="screen">
+                <div class="form-container">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-username">Username</label>
+                            <input type="text" id="login-username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" class="form-control" required>
+                        </div>
+                        <div class="button-container">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="button" id="btn-to-register" class="btn btn-secondary">Create an account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Configuration Screen -->
+            <div id="config-screen" class="screen">
+                <div class="form-container">
+                    <h2>Game Configuration</h2>
+                    <div class="config-options">
+                        <div class="form-group">
+                            <label for="shoot-key">Shoot Key</label>
+                            <select id="shoot-key" class="form-control">
+                                <option value="Space">Space</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="game-time">Game Time (minutes)</label>
+                            <select id="game-time" class="form-control">
+                                <option value="120">2:00</option>
+                                <option value="150">2:30</option>
+                                <option value="180">3:00</option>
+                                <option value="210">3:30</option>
+                                <option value="240">4:00</option>
+                                <option value="270">4:30</option>
+                                <option value="300">5:00</option>
+                            </select>                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="background-select">Choose Background</label>
+                        <select id="background-select" class="form-control">
+                          <option value="earth">Earth</option>
+                          <option value="mars">Mars</option>
+                          <option value="moon">Moon</option>
+                          <option value="saturn">Saturn</option>
+                        </select>
+                        <div id="background-preview" class="background-preview"></div>
+                      </div>
+                    <div class="button-container">
+                        <button id="btn-start-game" class="btn btn-primary">Start Game</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Game Screen -->
+            <div id="game-screen" class="screen">
+                <div id="game-container">
+                    <div id="game-stats">
+                        <div>Score: <span id="game-score">0</span></div>
+                        <div>Lives: <span id="game-lives">3</span></div>
+                        <div>Time: <span id="game-time-left">2:00</span></div>
+                    </div>
+                    <canvas id="game-canvas" width="800" height="600"></canvas>
+                </div>
+                <div class="button-container" style="margin-top: 20px;">
+                    <button id="btn-new-game" class="btn btn-primary">New Game</button>
+                </div>
+            </div>
+            
+            <!-- Game Over Screen -->
+            <div id="game-over-screen" class="screen">
+                <div class="game-end-message">
+                    <h2 id="game-result-title">Game Over</h2>
+                    <p id="game-result-message">You scored <span id="final-score">0</span> points!</p>
+                </div>
+                <div class="scoreboard">
+                    <div class="scoreboard-header">
+                        Your Score History
+                    </div>
+                    <div class="scoreboard-body" id="score-history">
+                    </div>
+                </div>
+                <div class="button-container" style="margin-top: 20px;">
+                    <button id="btn-play-again" class="btn btn-primary">Play Again</button>
+                    <button id="btn-back-to-welcome" class="btn btn-secondary">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Galactic Defenders &copy; 2025</p>
+            <p>Contact: yali4343@gmail.com</p>
+        </div>
+    </footer>
+    
+    <!-- About Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>About Galactic Defenders</h2>
+            <br/>
+            <br/>
+            <h3>Game Instructions:</h3>
+            <ul>
+                <li>Use arrow keys to move your spaceship</li>
+                <li>Press the configured key to shoot at the spaceships</li>
+                <li>Different rows of enemy spaceships give different points when destroyed</li>
+                <li>Avoid getting hit by the enemy spaceships' rockets</li>
+                <li>Destroy all ememy spaceships before time runs out</li>
+            </ul>
+            <br/>
+
+            <h3>Challenges Faced:</h3>
+            <p>We faced several challenges while developing this game:</p>
+            <ul>
+                <li>Implementing the game logic and ensuring smooth gameplay</li>
+                <li>Creating a responsive design that works on different screen sizes</li>
+                <li>Handling user input and managing game state effectively</li>
+                <li>Debugging and testing the game to ensure a bug-free experience</li>
+                <li>Integrating audio and visual effects to enhance the gaming experience</li>
+        </div>
+    </div>
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Exit Game</h2>
+            <p>Are you sure you want to exit the current game? Your progress will not be saved.</p>
+            <div class="button-container">
+                <button id="confirm-yes" class="btn btn-primary">Yes</button>
+                <button id="confirm-no" class="btn btn-secondary">No</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/user-management.js"></script>
+    <script src="js/screen-management.js"></script>
+    <script src="js/game-objects.js"></script>
+    <script src="js/game-logic.js"></script>
+    <script src="js/game-rendering.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
